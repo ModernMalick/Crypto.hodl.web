@@ -37,7 +37,7 @@
                     $result_getAssetsTable = mysqli_query($conn, $query_getAssetsTable);
 
                     if(isset($_POST["ticker"]) && isset($_POST["invested"]) && isset($_POST["type"])){
-                        $query_insertAsset = "INSERT INTO `asset` (`id`, `ticker`, `invested`, `current`, `type`) VALUES (NULL,'" . $_POST["ticker"] . "'," . $_POST["invested"] . "," . $_POST["invested"] . ",'" . $_POST["type"] . "')";
+                        $query_insertAsset = "INSERT INTO `asset` (`id`, `ticker`, `invested`, `current`) VALUES (NULL,'" . $_POST["ticker"] . "'," . $_POST["invested"] . "," . $_POST["invested"] . ")";
                         if (mysqli_query($conn, $query_insertAsset)) {
                             header("Refresh:0");
                         } else {
@@ -71,55 +71,6 @@
                              echo "";
                         }
                     }
-
-                    $queryTotalTypes = "SELECT SUM(current) FROM asset WHERE type = 'stock'";
-                    $queryTotalCrypto = "SELECT SUM(current) FROM asset WHERE type = 'crypto'";
-                    $result_getTotalStock = mysqli_query($conn, $queryTotalTypes);
-                    $result_getTotalCrypto = mysqli_query($conn, $queryTotalCrypto);
-
-                    $totalStock = "";
-                    $totalCrypto = "";
-
-                    while($row = mysqli_fetch_array($result_getTotalStock)){
-                        $GLOBALS['totalStock'] = $row['SUM(current)'];
-                    }
-
-                    while($row = mysqli_fetch_array($result_getTotalCrypto)){
-                        $GLOBALS['totalCrypto'] = $row['SUM(current)'];
-                    }
-
-                    echo
-                        "<script type='text/javascript'>
-                                google.charts.load('current', {'packages':['corechart']});
-                                google.charts.setOnLoadCallback(drawChart);
-                                function drawChart() {
-                    
-                                    var data = google.visualization.arrayToDataTable([
-                                        ['Task', 'Asset type percentage'],
-                                        ['Crypto',".$GLOBALS['totalCrypto']."],
-                                        ['Stock', ".$GLOBALS['totalStock']."]
-                                    ]);
-                    
-                                    var options = {
-                                        colors: [
-                                            '#285CAF',
-                                            '#820911'
-                                        ],
-                                        backgroundColor: { fill:'transparent' },
-                                        is3D: true,
-                                        chartArea: {
-                                            width: '100%',
-                                            height: '100%'
-                                        },
-                                        legend: {
-                                            position: 'none'
-                                        }
-                                    };
-                    
-                                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                                    chart.draw(data, options);
-                                }
-                            </script>";
 
                     while($row = mysqli_fetch_array($result_getTotals)){
                         $class = "";
@@ -290,7 +241,6 @@
 
                         <button type="submit">ADD TO PORTFOLIO</button>
                 </form>
-                <div id="piechart"></div>
             </div>
         </div>
     </body>
