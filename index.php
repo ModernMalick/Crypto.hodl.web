@@ -212,7 +212,7 @@ mysqli_close($conn);
             <?php endforeach; ?>
             </tbody>
         </table>
-        <button class="save" type="submit" name="update">SAVE</button>
+        <button class="save separate" type="submit" name="update">SAVE</button>
     </form>
     <div class="column fill_height">
         <div class="separate glass_panel  fill_height">

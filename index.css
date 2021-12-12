@@ -187,7 +187,7 @@ rect {
 }
 
 line {
-    stroke: transparent;
+    stroke: rgba(255, 255, 255, 0.05);
 }
 
 text {
@@ -207,6 +207,7 @@ label {
 
 #newForm {
     max-width: 40%;
+    justify-content: space-between;
 }
 
 a {
