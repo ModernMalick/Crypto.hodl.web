@@ -7,9 +7,11 @@
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.0.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET
+SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET
+time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,12 +29,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `asset`
 --
 
-CREATE TABLE `asset` (
-  `id` int(11) NOT NULL,
-  `ticker` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `invested` int(11) NOT NULL,
-  `current` int(11) NOT NULL,
-  `type` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+CREATE TABLE `asset`
+(
+    `id`       int(11) NOT NULL,
+    `ticker`   varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+    `invested` int(11) NOT NULL,
+    `current`  int(11) NOT NULL,
+    `type`     varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -43,7 +46,7 @@ CREATE TABLE `asset` (
 -- Index pour la table `asset`
 --
 ALTER TABLE `asset`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `ticker` (`ticker`);
 
 --
@@ -54,7 +57,7 @@ ALTER TABLE `asset`
 -- AUTO_INCREMENT pour la table `asset`
 --
 ALTER TABLE `asset`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+    MODIFY `id` int (11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
