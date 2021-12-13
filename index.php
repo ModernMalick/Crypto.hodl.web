@@ -132,7 +132,7 @@ mysqli_close($conn);
             let data = new google.visualization.DataTable(<?php echo json_encode($arr)?>);
             let options = {
                 colors: [
-                    '#FFFFFF',
+                    '#acc3e5',
                     '#4798F4'
                 ],
                 legend: {
@@ -157,7 +157,7 @@ mysqli_close($conn);
                 </div>
                 <div class="row">
                     <h3 class="no_margin">Invested :&nbsp;</h3>
-                    <h3 class="no_margin"><?php echo $total['SUM(invested)'] ?>€</h3>
+                    <h3 class="no_margin"><?php echo $total['SUM(invested)'] ?> €</h3>
                 </div>
                 <div class="row">
                     <h3 class="no_margin">Gains :&nbsp;</h3>
@@ -203,9 +203,9 @@ mysqli_close($conn);
                     <td class="<?php echo $sentiment ?> gain"><?php echo $sign ?><?php echo $tableRow['current'] - $tableRow['invested'] ?>
                         €
                     </td>
-                    <td>
+                    <td class="delete_container row">
                         <button class="delete" type="submit" name="delete" value="<?php echo $tableRow['ticker'] ?>">
-                            DELETE
+                            <img src="assets/close.png">
                         </button>
                     </td>
                 </tr>
@@ -215,8 +215,8 @@ mysqli_close($conn);
         <button class="save separate" type="submit" name="update">SAVE</button>
     </form>
     <div class="column fill_height">
-        <div class="separate glass_panel  fill_height">
-            <div id="chart"></div>
+        <div class="separate glass_panel  fill_height row">
+            <div id="chart" class="fill_height separate"></div>
         </div>
         <div class="row fill_height">
             <form class="glass_panel fill_height separate column" action="index.php" method="post" id="newForm">

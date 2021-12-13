@@ -63,8 +63,8 @@ h3, label {
 }
 
 #sentiment_icon {
-    height: 8vw;
-    width: 8vw;
+    height: 6.5vw;
+    width: 6.5vw;
 }
 
 .fill_height {
@@ -74,11 +74,11 @@ h3, label {
 
 .glass_panel {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 2.5vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-bottom: 1.5vh;
-    padding-top: 1.5vh;
+    border-radius: 0.5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
 }
 
 td, th {
@@ -91,6 +91,7 @@ td, th {
 
 .ticker {
     text-align: left;
+
 }
 
 #ticker {
@@ -152,10 +153,6 @@ button {
     border: none;
     max-width: fit-content;
     align-self: flex-end;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-top: 1.25vh;
-    padding-bottom: 1.25vh;
     border-radius: 0.5vw;
 }
 
@@ -163,19 +160,32 @@ button:hover {
     cursor: pointer;
 }
 
+button img{
+    width: 3vw;
+    height: 3vw;
+    opacity: 25%;
+}
+
+button img:hover{
+    opacity: 50%;
+}
+
 button.delete {
-    background: rgba(71, 152, 244, 0.25);
+    background: rgba(255, 255, 255, 0);
     font-size: 0.75vw;
 }
 
 button.delete:hover {
-    background: rgba(71, 152, 244, 0.1);
 }
 
 button.save {
     background: rgba(71, 152, 244, 0.85);
     font-size: 1.25vw;
     margin-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 1.25vh;
+    padding-bottom: 1.25vh;
 }
 
 button.save:hover {
@@ -213,10 +223,14 @@ label {
 a {
     color: white;
     text-decoration: none;
-    border-bottom: 0.2vh solid rgba(255, 255, 255, 0);
+    border-bottom: 0.2vh solid rgba(255, 255, 255, 0.3);
     width: max-content;
 }
 
 a:hover {
     border-bottom: 0.2vh solid rgba(255, 255, 255, 0.5);
+}
+
+.delete_container{
+    justify-content: end;
 }
