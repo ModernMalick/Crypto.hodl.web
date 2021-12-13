@@ -47,11 +47,11 @@ while ($row = mysqli_fetch_array($result_getTotals)) {
     $totals[] = $row;
     if ($row['SUM(current)'] < $row['SUM(invested)']) {
         $totalSentiment = "negative";
-        $sentimentIcon = "../assets/sentiments/explosion.png";
+        $sentimentIcon = "assets/sentiments/explosion.png";
     } else {
         $totalSentiment = "positive";
         $totalSign = "+";
-        $sentimentIcon = "../assets/sentiments/rocket.png";
+        $sentimentIcon = "assets/sentiments/rocket.png";
     }
 }
 
@@ -118,8 +118,8 @@ mysqli_close($conn);
 <html lang="en">
 <head>
     <title>CryptoWatcher</title>
-    <link rel="icon" type="image/x-icon" href="../assets/profits.ico">
-    <link rel="stylesheet" media="screen" type="text/css" title="style" href="../index.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/bitcoin.ico">
+    <link rel="stylesheet" media="screen" type="text/css" title="style" href="index.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
