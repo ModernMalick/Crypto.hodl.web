@@ -21,11 +21,19 @@ html {
     justify-content: space-between;
 }
 
+.align_center {
+    justify-content: center;
+}
+
 .separate {
     margin-left: 1.25vw;
     margin-right: 1.25vw;
     margin-bottom: 1.5vh;
     margin-top: 1.5vh;
+}
+
+.mid_width{
+    min-width: 20%;
 }
 
 body {
@@ -42,6 +50,10 @@ body {
     margin: 0;
 }
 
+.align_right{
+    text-align: right;
+}
+
 h1 {
     font-size: 2vw;
 }
@@ -51,7 +63,7 @@ h2 {
 }
 
 h3, label {
-    font-size: 1vw;
+    font-size: 1.15vw;
 }
 
 .positive {
@@ -62,7 +74,7 @@ h3, label {
     color: #883131;
 }
 
-#sentiment_icon {
+.icon {
     height: 6.5vw;
     width: 6.5vw;
 }
@@ -83,15 +95,16 @@ h3, label {
 
 td, th {
     text-align: center;
-    width: 7vw;
+    width: 5vw;
     margin-top: 2.5vh;
     margin-bottom: 2.5vh;
     font-size: 1.5vw;
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
 }
 
 .ticker {
     text-align: left;
-
 }
 
 #ticker {
@@ -102,10 +115,15 @@ td, th {
 
 .gain {
     text-align: right;
+    font-size: 1.5vw;
+}
+
+tbody .gain{
+    font-size: 1.25vw;
 }
 
 tr {
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 0.2vh solid rgba(255, 255, 255, 0.05);
 }
@@ -128,10 +146,14 @@ input {
     border: 0.2vh solid rgba(255, 255, 255, 0.15);
     border-radius: 0.5vw;
     height: 4vh;
-    width: 6vw;
+    width: 5vw;
     text-align: center;
     color: white;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
+}
+
+::placeholder{
+    color: rgba(255, 255, 255, 0.25);
 }
 
 input::-webkit-outer-spin-button,
@@ -159,10 +181,9 @@ button {
 button:hover {
     cursor: pointer;
 }
-
 button img{
-    width: 3vw;
-    height: 3vw;
+    width: 2.5vw;
+    height: 2.5vw;
     opacity: 25%;
 }
 
@@ -172,20 +193,16 @@ button img:hover{
 
 button.delete {
     background: rgba(255, 255, 255, 0);
-    font-size: 0.75vw;
-}
-
-button.delete:hover {
 }
 
 button.save {
     background: rgba(71, 152, 244, 0.85);
     font-size: 1.25vw;
-    margin-bottom: 1vh;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-top: 1.25vh;
-    padding-bottom: 1.25vh;
+    margin-bottom: 0.75vh;
+    padding-left: 0.75vw;
+    padding-right: 0.75vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 
 button.save:hover {
@@ -209,6 +226,7 @@ text {
 
 #signature {
     align-self: flex-end;
+    font-size: 1vw;
 }
 
 label {
@@ -225,6 +243,7 @@ a {
     text-decoration: none;
     border-bottom: 0.2vh solid rgba(255, 255, 255, 0.3);
     width: max-content;
+    font-size: 1.25vw;
 }
 
 a:hover {

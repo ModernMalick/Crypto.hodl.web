@@ -148,26 +148,22 @@ mysqli_close($conn);
 <div class="main_container row separate">
     <div class="column">
         <h1 class="separate">Welcome to your portfolio !</h1>
-        <div class="separate">
+        <div class="row">
             <?php foreach ($totals as $total): ?>
-                <div class="row">
+                <div class="column separate">
                     <h2 class="no_margin">Current value :&nbsp;</h2>
-                    <h2 class="<?php echo $totalSentiment ?> no_margin"><?php echo $totalSign ?><?php echo $total['SUM(current)'] ?>
-                        €</h2>
-                </div>
-                <div class="row">
                     <h3 class="no_margin">Invested :&nbsp;</h3>
-                    <h3 class="no_margin"><?php echo $total['SUM(invested)'] ?> €</h3>
-                </div>
-                <div class="row">
                     <h3 class="no_margin">Gains :&nbsp;</h3>
-                    <h3 class="<?php echo $totalSentiment ?> no_margin"><?php echo $totalSign ?><?php echo $total['SUM(current)'] - $total['SUM(invested)'] ?>
-                        €</h3>
+                </div>
+                <div class="column align_right separate">
+                    <h2 class="<?php echo $totalSentiment ?> no_margin"><?php echo $totalSign ?><?php echo $total['SUM(current)'] ?>€</h2>
+                    <h3 class="no_margin"><?php echo $total['SUM(invested)'] ?> €</h3>
+                    <h3 class="<?php echo $totalSentiment ?> no_margin"><?php echo $totalSign ?><?php echo $total['SUM(current)'] - $total['SUM(invested)'] ?>€</h3>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
-    <img src="<?php echo $sentimentIcon ?>" id="sentiment_icon" class="separate" alt="sentiment">
+    <img src="<?php echo $sentimentIcon ?>" class="separate icon" alt="sentiment">
 </div>
 <div class="main_container row separate fill_height">
     <form action="index.php" method="post" class="column glass_panel separate fill_height">
@@ -220,27 +216,27 @@ mysqli_close($conn);
         </div>
         <div class="row fill_height">
             <form class="glass_panel fill_height separate column" action="index.php" method="post" id="newForm">
-                <h3 class="separate">New Investment</h3>
+                <h2 class="separate">New Investment</h2>
                 <div class="row full_row">
                     <label class="separate" for="ticker">Ticker</label>
-                    <input class="separate" type="text" name="new_ticker">
+                    <input class="separate" type="text" name="new_ticker" placeholder="$HODL">
                 </div>
                 <div class="row full_row">
                     <label class="separate" for="invested">Invested</label>
-                    <input class="separate" type="number" name="new_invested">
+                    <input class="separate" type="number" name="new_invested" placeholder="0">
                 </div>
                 <button class="save separate" type="submit">ADD</button>
             </form>
             <div class="column fill_height">
                 <div class="row fill_height">
                     <div class="separate glass_panel column fill_height end">
-                        <h3 class="separate">Communities</h3>
+                        <h2 class="separate">Communities</h2>
                         <a class="separate" href="https://www.reddit.com/r/Crypto_com/" target="_blank">r/Crypto_Com</a>
                         <a class="separate" href="https://www.reddit.com/r/CryptoCurrency/" target="_blank">r/CryptoCurrency</a>
                         <a class="separate" href="https://www.reddit.com/r/CryptoCurrencyFire/" target="_blank">r/CryptoCurrencyFire</a>
                     </div>
                     <div class="separate glass_panel column fill_height end">
-                        <h3 class="separate">Misc.</h3>
+                        <h2 class="separate">Misc.</h2>
                         <a class="separate" href="https://coinmarketcap.com/currencies/presearch/" target="_blank">Pre
                             to USD</a>
                         <a class="separate" href="https://cryptoroyale.one/" target="_blank">Crypto Royale</a>
