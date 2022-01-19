@@ -1,5 +1,5 @@
 html {
-    background: #091D3B;
+    background-color: #091D3B;
     color: white;
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
@@ -32,7 +32,7 @@ html {
     margin-top: 1.5vh;
 }
 
-.mid_width{
+.mid_width {
     min-width: 20%;
 }
 
@@ -50,7 +50,7 @@ body {
     margin: 0;
 }
 
-.align_right{
+.align_right {
     text-align: right;
 }
 
@@ -118,7 +118,7 @@ td, th {
     font-size: 1.5vw;
 }
 
-tbody .gain{
+tbody .gain {
     font-size: 1.25vw;
 }
 
@@ -152,7 +152,7 @@ input {
     font-size: 1.25vw;
 }
 
-::placeholder{
+::placeholder {
     color: rgba(255, 255, 255, 0.25);
 }
 
@@ -181,13 +181,14 @@ button {
 button:hover {
     cursor: pointer;
 }
-button img{
+
+button img {
     width: 2.5vw;
     height: 2.5vw;
     opacity: 25%;
 }
 
-button img:hover{
+button img:hover {
     opacity: 50%;
 }
 
@@ -250,6 +251,6 @@ a:hover {
     border-bottom: 0.2vh solid rgba(255, 255, 255, 0.5);
 }
 
-.delete_container{
+.delete_container {
     justify-content: end;
 }

@@ -41,7 +41,6 @@ $query_getTotals = "SELECT SUM(invested), SUM(current)  FROM asset";
 $result_getTotals = mysqli_query($conn, $query_getTotals);
 $totals = array();
 $totalSentiment = "";
-$totalSign = "";
 $sentimentIcon = "";
 while ($row = mysqli_fetch_array($result_getTotals)) {
     $totals[] = $row;
@@ -50,7 +49,6 @@ while ($row = mysqli_fetch_array($result_getTotals)) {
         $sentimentIcon = "assets/sentiments/explosion.png";
     } else {
         $totalSentiment = "positive";
-        $totalSign = "+";
         $sentimentIcon = "assets/sentiments/rocket.png";
     }
 }
@@ -156,9 +154,11 @@ mysqli_close($conn);
                     <h3 class="no_margin">Gains :&nbsp;</h3>
                 </div>
                 <div class="column align_right separate">
-                    <h2 class="<?php echo $totalSentiment ?> no_margin"><?php echo $totalSign ?><?php echo $total['SUM(current)'] ?>€</h2>
+                    <h2 class="<?php echo $totalSentiment ?> no_margin"><?php echo abs($total['SUM(current)']) ?>
+                        €</h2>
                     <h3 class="no_margin"><?php echo $total['SUM(invested)'] ?> €</h3>
-                    <h3 class="<?php echo $totalSentiment ?> no_margin"><?php echo $totalSign ?><?php echo $total['SUM(current)'] - $total['SUM(invested)'] ?>€</h3>
+                    <h3 class="<?php echo $totalSentiment ?> no_margin"><?php echo abs(round(((($total['SUM(current)'] - $total['SUM(invested)']) * 100) /  $total['SUM(invested)']), 0)) ?> % (<?php echo abs($total['SUM(current)'] - $total['SUM(invested)']) ?>
+                        €)</h3>
                 </div>
             <?php endforeach; ?>
         </div>
